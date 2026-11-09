@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#100d0b" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='27' font-size='27' fill='%23d8aa63'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E" />
+  <title>ASHEN WING — A caveborne tale</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game" aria-label="Ashen Wing game">
+    <canvas id="scene" aria-label="Game world"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Ashen Wing home"><span class="sigil">✦</span> ASHEN WING</a>
+      <div class="run-stats" id="runStats" hidden>
+        <div class="stat"><span class="stat-label">SOULS</span><strong id="souls">000</strong></div>
+        <div class="stat"><span class="stat-label">DEPTH</span><strong id="depth">0 <small>m</small></strong></div>
+      </div>
+      <button class="sound-button" id="soundButton" aria-label="Toggle sound" title="Toggle sound">
+        <svg id="soundIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6l-5 4H4z"/><path d="M16 9a5 5 0 0 1 0 6M18.5 6.5a9 9 0 0 1 0 11"/></svg>
+      </button>
+    </header>
+
+    <section class="boss-hud" id="bossHud" hidden aria-live="polite">
+      <div class="boss-name"><span class="boss-kicker">ANCIENT ONE</span><span id="bossName">THE HOLLOW WARDEN</span></div>
+      <div class="boss-meter"><div id="bossBar"></div></div>
+    </section>
+
+    <div class="hearts" id="hearts" hidden aria-label="Health"></div>
+
+    <section class="overlay" id="startScreen">
+      <div class="eyebrow"><span></span> A CAVE-BORNE TALE <span></span></div>
+      <h1>ASHEN<br/><em>WING</em></h1>
+      <p class="subtitle">The old gods sleep below.<br/>The brave do not.</p>
+      <div class="rule"><i></i><span>✦</span><i></i></div>
+      <button class="primary-button" id="startButton"><span>DESCEND</span><b>↗</b></button>
+      <p class="controls-hint"><kbd>SPACE</kbd> FLAP <span>·</span> <kbd>X</kbd> CAST <span class="touch-copy">· TAP TO FLAP</span></p>
+    </section>
+
+    <section class="overlay result-screen" id="resultScreen" hidden>
+      <div class="eyebrow" id="resultEyebrow"><span></span> THE DEPTHS REMEMBER <span></span></div>
+      <h2 id="resultTitle">FALLEN</h2>
+      <p class="subtitle" id="resultText">The dark takes another.</p>
+      <div class="result-score"><span>SOULS GATHERED</span><strong id="finalSouls">000</strong></div>
+      <button class="primary-button" id="retryButton"><span>RISE AGAIN</span><b>↻</b></button>
+      <p class="controls-hint">A little farther. A little stronger.</p>
+    </section>
+
+    <div class="toast" id="toast" aria-live="polite"></div>
+    <div class="touch-controls" id="touchControls" hidden>
+      <button class="touch-button flap-button" id="flapButton" aria-label="Flap upward"><span>↑</span><small>RISE</small></button>
+      <button class="touch-button cast-button" id="castButton" aria-label="Cast a soul bolt"><span>✦</span><small>CAST</small></button>
+    </div>
+    <footer class="bottom-note" id="bottomNote"><span>✧</span> DESCEND INTO THE DARK <span>✧</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
